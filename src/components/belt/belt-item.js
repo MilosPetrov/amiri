@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { ShopContext } from '../../context/shop-context';
-import bookmark from '../../images/bookmark.png'
-import bookmarkC from '../../images/bookmarkC.png'
 import './belt.css'
+import { BookmarkSimple } from 'phosphor-react';
 
 export default function BeltItem(props) {
   const { addToCart, toggleBookmark, bookmarkedCards } = useContext(ShopContext);
@@ -23,12 +22,12 @@ export default function BeltItem(props) {
   
   return (
     <div className='beltItem'>
-        <img 
-            className='beltItem-bookmark'
-            src={bookmarkedCards[id] ? bookmarkC : bookmark} 
-            alt='Bookmark'
-            onClick={handleCardClick}
-        />
+        <BookmarkSimple 
+        className='beltItem-bookmark'
+        weight={bookmarkedCards[id] ?  'fill' : 'thin'} 
+        alt='Bookmark'
+        onClick={handleCardClick}
+      />
         <img 
             src={coverImg} 
             className='beltItem-img' 

@@ -11,6 +11,15 @@ export default function Navbar() {
     const [ drawer, setDrawer ] = useState(false)
     let navigate = useNavigate()
 
+    const handleNavigation = (path) => {
+        navigate(path);
+        scrollToTop();
+      };
+    
+      const scrollToTop = () => {
+        window.scrollTo(0, 0);
+      };
+
     const hasBookmarkedProducts = Object.values(bookmarkedCards).some(
         (bookmarked) => bookmarked
       );
@@ -29,30 +38,30 @@ export default function Navbar() {
     return (
         <div className='navbar'>
             <ul className="navbar--list">
-                <li className="loading-line" onClick={() => navigate("/Mens")}>
+                <li className="loading-line" onClick={() => handleNavigation("/Mens")}>
                     MENSWEAR
                 </li>
-                <li className="loading-line" onClick={() => navigate("/Womens")}>
+                <li className="loading-line" onClick={() => handleNavigation("/Womens")}>
                     WOMENSWEAR
                 </li>
-                <li className="loading-line" onClick={() => navigate("/Kids")}>
+                <li className="loading-line" onClick={() => handleNavigation("/Kids")}>
                     KIDS
                 </li>
-                <li className="loading-line" onClick={() => navigate("/Footwear")}>
+                <li className="loading-line" onClick={() => handleNavigation("/Footwear")}>
                     FOOTWEAR
                 </li>
-                <li className="loading-line" onClick={() => navigate("/Accessories")}>
+                <li className="loading-line" onClick={() => handleNavigation("/Accessories")}>
                     ACCESSORIES
                 </li>
             </ul>
-            <h1 className="navbar--brand" onClick={() => navigate("/")}>
+            <h1 className="navbar--brand" onClick={() => handleNavigation("/")}>
                 <img src='https://cdn.shopify.com/s/files/1/1056/1394/files/logo_be4041d5-a81e-4d1e-a43d-29b0b0d52cbe.png?v=1678302533' 
                 alt="asd"
                 />
             </h1>
             <ul className="navbar--main">
-                <li><User size={24} onClick={() => navigate("/Login")}/></li>
-                <li onClick={() => navigate("/Wishlist")}>
+                <li><User size={24} onClick={() => handleNavigation("/Login")}/></li>
+                <li onClick={() => handleNavigation("/Wishlist")}>
                     {hasBookmarkedProducts ? ( <BookmarkSimple size={24} weight="fill" /> ) : (<BookmarkSimple size={24} />)}
                 </li>
                 <li onClick={toggleDrawer}>

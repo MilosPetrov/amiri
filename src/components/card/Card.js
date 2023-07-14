@@ -1,9 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { ShopContext } from '../../context/shop-context';
-import bookmark from '../../images/bookmark.png';
-import bookmarkC from '../../images/bookmarkC.png';
 import SizeAlert from '../sizeAlert/SizeAlert';
-
+import { BookmarkSimple } from 'phosphor-react';
 
 import './card.css';
 export default function Card(props) {
@@ -53,9 +51,9 @@ export default function Card(props) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <img 
+      <BookmarkSimple 
         className='card--bookmark'
-        src={bookmarkedCards[id] ? bookmarkC : bookmark} 
+        weight={bookmarkedCards[id] ?  'fill' : 'thin'} 
         alt='Bookmark'
         onClick={handleCardClick}
       />
