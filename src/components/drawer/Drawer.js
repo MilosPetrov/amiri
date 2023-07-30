@@ -14,7 +14,6 @@ const Drawer = ({ isOpen, isClosed }) => {
   const drawerClassName = `drawer ${isOpen ? 'open' : ''}`;
 
   const { cartItems, getTotalCartAmount } = useContext(ShopContext);
-  const totalAmount = getTotalCartAmount();
   const navigate = useNavigate()
 
   const handleContinueShopping = () => {
@@ -22,17 +21,6 @@ const Drawer = ({ isOpen, isClosed }) => {
     navigate('/');
   };
 
-  // useEffect(() => {
-  //   const handleBodyScroll = () => {
-  //     document.body.classList.toggle('drawer.open', isOpen);
-  //   };
-
-  //   handleBodyScroll();
-
-  //   return () => {
-  //     document.body.classList.remove('drawer.open');
-  //   };
-  // }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -42,11 +30,14 @@ const Drawer = ({ isOpen, isClosed }) => {
     }
   }, [isOpen]);
 
-  const cartElements = Object.keys(cartItems).map((itemId) => {
+  const cartElements = Object.keys(cartItems).map((key) => {
+    const [itemId, pickedSize] = key.split('-');
     const product = products.find((p) => p.id === Number(itemId));
-    const quantity = cartItems[itemId].quantity;
-    return quantity > 0 ? <CartItem key={itemId} product={product} /> : null;
+    const quantity = cartItems[key].quantity;
+    return quantity > 0 ? <CartItem key={key} product={product} selectedSize={pickedSize} /> : null;
   });
+
+  const totalAmount = getTotalCartAmount()
 
   return (
     <div>

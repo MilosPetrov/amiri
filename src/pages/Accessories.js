@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../components/navbar/Navbar'
-import Footer from '../components/Footer'
 import Heading from '../components/Heading'
 import { accessories } from '../data'
 import Card from '../components/card/Card'
@@ -8,7 +7,7 @@ import Card from '../components/card/Card'
 export default function Accessories() {
 
     const cardElement = accessories.map((product) => (
-        <Card key={product.id} product={product} />
+        <Card key={product.id} product={product} category="Accessories" />
     ))
       return (
         <div className="Accessories">
@@ -17,7 +16,6 @@ export default function Accessories() {
           <section className='cards-list'>
             {cardElement}
           </section>
-          <Footer />
         </div>
       );
 }

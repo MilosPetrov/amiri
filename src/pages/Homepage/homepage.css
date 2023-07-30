@@ -1,0 +1,64 @@
+.container--collection {
+    height: 151px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container--collection>h1 {
+    font-weight: 500;
+    font-size: 19px;
+    font-family: 'Helvetica';
+    margin: 75px 0px 1px;
+    padding: 9px;
+    letter-spacing: -.02rem;
+  }
+  
+  ul {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+  
+  li {
+    padding: 21px 16px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: .06em;
+  }
+  
+  .main-video-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding-bottom: 24px;
+  }
+  
+  .womens-new {
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+  
+  .womens-new img {
+    width: 100%;
+  }
+  
+  
+  .womens-new p {
+    width: 600px;
+    margin: 0px;
+    margin-left: 630px;
+    padding: 50px 0px;
+    font-size: 15px;
+    line-height: 21px;
+    text-align: center;
+  }

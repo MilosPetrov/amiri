@@ -1,11 +1,10 @@
 import React from 'react'
-import Footer from '../components/Footer'
-import Belt from '../components/belt/Belt'
-import Banners from '../components/banners/Banners'
-import { women, accessories, men, footwear } from '../data'
+import Belt from '../../components/belt/Belt'
+import Banners from '../../components/banners/Banners'
+import { women, accessories, men, footwear } from '../../data'
 
 
-
+import "./homepage.css"
 export default function Homepage() {
 
   const forHimArray = [...men, ...footwear]
@@ -27,7 +26,6 @@ export default function Homepage() {
         <img src='https://cdn.shopify.com/s/files/1/1056/1394/files/cRnkiBnQ.jpg?v=1677977285&width=992' />
       </div>
       <Belt array={forHerArray} heading={"FOR HER"}/>
-      <Footer />
     </div>
   )
 }

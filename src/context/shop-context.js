@@ -20,53 +20,60 @@ const getDefaultBookmarked = () => {
 };
 
 export default function ShopContextProvider(props) {
-  const [bookmarkedCards, setBookmarkedCards] = useState(getDefaultBookmarked());
   const [cartItems, setCartItems] = useState(getDefaultCart());
+  const [bookmarkedCards, setBookmarkedCards] = useState(getDefaultBookmarked());
+
+  const getCompositeKey = (itemId, pickedSize) => {
+    return `${itemId}-${pickedSize}`;
+  };
 
   
   // CART  
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
-    for (const item in cartItems) {
-      if (cartItems[item] && cartItems[item].quantity > 0) {
-        let itemInfo = products.find((product) => product.id === Number(item));
-        totalAmount += cartItems[item].quantity * itemInfo.price; 
+    for (const key in cartItems) {
+      const [itemId, pickedSize] = key.split('-');
+      const product = products.find((p) => p.id === Number(itemId));
+      if (cartItems[key].quantity > 0 && product) {
+        totalAmount += cartItems[key].quantity * product.price;
       }
     }
     return totalAmount;
   };
 
-  // const addToCart = (itemId) => {
-  //   setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-    
-  // };
 
   const addToCart = (itemId, pickedSize) => {
-    setCartItems((prev) => ({
-      ...prev,
-      [itemId]: {
-        quantity: prev[itemId] ? prev[itemId].quantity + 1 : 1,
-        size: pickedSize,
-      },
+    const key = getCompositeKey(itemId, pickedSize);
+    setCartItems((prevCartItems) => ({
+      ...prevCartItems,
+      [key]: { ...prevCartItems[key], quantity: (prevCartItems[key]?.quantity || 0) + 1, pickedSize },
     }));
+  
   };
+  console.log("Updated cart:", cartItems);
 
-  const removeFromCart = (itemId) => {
-    setCartItems((prev) => {
-      const updatedCart = { ...prev };
-      if (updatedCart[itemId] && updatedCart[itemId].quantity > 0) {
-        updatedCart[itemId].quantity -= 1;
-        if (updatedCart[itemId].quantity === 0) {
-          delete updatedCart[itemId];
+
+  const removeFromCart = (itemId, pickedSize) => {
+    const key = getCompositeKey(itemId, pickedSize);
+    setCartItems((prevCartItems) => {
+      const updatedCartItems = { ...prevCartItems };
+      if (updatedCartItems[key] && updatedCartItems[key].quantity > 0) {
+        updatedCartItems[key].quantity -= 1;
+        if (updatedCartItems[key].quantity === 0) {
+          delete updatedCartItems[key];
         }
       }
-      return updatedCart;
+      return updatedCartItems;
     });
   };
 
-  const updateCartItemCount = (newAmount, itemId) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
+  const updateCartItemCount = (newQuantity, itemId, pickedSize) => {
+    const key = getCompositeKey(itemId, pickedSize);
+    setCartItems((prevCartItems) => ({
+      ...prevCartItems,
+      [key]: { ...prevCartItems[key], quantity: newQuantity  },
+    }));
   };
 
   const checkout = () => {
@@ -82,33 +89,6 @@ export default function ShopContextProvider(props) {
     }));
   };
 
-  // const addBookmark = (itemId) => {
-  //   setCards((prevCards) => {
-  //     const updatedCards = prevCards.map((card) =>
-  //       card.id === itemId ? { ...card, bookmarked: true } : card
-  //     );
-  //     return updatedCards;
-  //   });
-  //   setBookmarkedCards((prevBookmarkedCards) => ({
-  //     ...prevBookmarkedCards,
-  //     [itemId]: true,
-  //     bookmarked: !prevBookmarkedCards.bookmarked
-  //   }));
-  // };
-
-  // const removeBookmark = (cardId) => {
-  //   setCards((prevCards) => {
-  //     const updatedCards = prevCards.map((card) =>
-  //       card.id === cardId ? { ...card, bookmarked: false } : card
-  //     );
-  //     return updatedCards;
-  //   });
-  //   setBookmarkedCards((prevBookmarkedCards) => {
-  //     const { [cardId]: _, ...updatedBookmarkedCards } = prevBookmarkedCards;
-  //     return updatedBookmarkedCards;
-  //   });
-  // };
-
 
 
   const contextValue = {
@@ -120,6 +100,7 @@ export default function ShopContextProvider(props) {
     getTotalCartAmount,
     checkout,
     toggleBookmark,
+    getCompositeKey
   };
 
   return (

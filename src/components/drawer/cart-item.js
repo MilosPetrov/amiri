@@ -1,37 +1,38 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
 
-export const CartItem = ({ product }) => {
-  const { id, name, price, coverImg } = product;
-  const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
+export const CartItem = ({ product = {}, selectedSize }) => {
+  const { id, name, price, coverImg, size } = product;
+  const { cartItems, addToCart, removeFromCart, updateCartItemCount, getCompositeKey } =
     useContext(ShopContext);
 
-    const item = cartItems[id];
+    const item = cartItems[getCompositeKey(id, selectedSize)];
     const quantity = item ? item.quantity : 0;
-    const size = item ? item.size : ""
+    const itemSize = selectedSize !== "Select size" ? selectedSize : null;
+    
+
+  const handleInputChange = (event) => {
+    const newQuantity = Number(event.target.value);
+    updateCartItemCount(newQuantity, id, selectedSize);
+  };
+
+  console.log("CartItem rendered with quantity:", quantity);
 
   return (
     <div className="cartItem">
-      <img className="cartItem-img" src={coverImg} alt="coverImage"/>
+      <img className="cartItem-img" src={coverImg} alt="coverImage" />
       <div className="cartItem-info">
         <div className="cartItem-description">
-          <p>
-            {name}
-          </p>
-          <p>
-            {size}
-          </p>
+          <p>{name}</p>
+          {itemSize && <p>{itemSize}</p>}
           <div className="cartItem-countHandler">
-            <button onClick={() => removeFromCart(id)}> - </button>
-            <input
-              value={quantity}
-              onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
-            />
-            <button onClick={() => addToCart(id)}> + </button>
+            <button onClick={() => removeFromCart(id, selectedSize)}> - </button>
+            <input value={quantity} onChange={handleInputChange} />
+            <button onClick={() => addToCart(id, selectedSize)}> + </button>
           </div>
           <p> {price.toLocaleString(undefined, {minimumFractionDigits: 2})} RSD</p>
         </div>
-      </div>   
+      </div>
     </div>
   );
-}
+};

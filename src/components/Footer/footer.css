@@ -1,0 +1,15 @@
+.footer {
+    display: block;
+    position: relative;
+    margin-top: 120px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  
+  .footer img {
+    max-width: 43px;
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+  }
+  

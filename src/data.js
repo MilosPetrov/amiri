@@ -6,7 +6,7 @@ export const men = [
             name: "VINTAGE PATCHWORK BOMBER",
             price: 334300,
             coverImg: product1,
-            secondImg: "https://amiri.com/cdn/shop/products/19_02_OUTERWEAR_TOP_VINTAGEPATCHVARSITYBOMBER_PF23MOS003-610_RED_0750_a695e6f0-47ae-41b4-828f-8f7fd9e8c110.jpg?v=1686005471&width=1980",
+            secondImg: "https://amiri.com/cdn/shop/products/19_02_OUTERWEAR_TOP_VINTAGEPATCHVARSITYBOMBER_PF23MOS003-610_RED_0750.jpg?v=1690099937&width=1980",
             bookmarked: false,
             size: ["S", "M", "L", "XL"],
             quantity: 0
@@ -16,14 +16,14 @@ export const men = [
             name: "M.A. TWO TONE FULL CANVAS",
             price: 211400,
             coverImg: "https://amiri.com/cdn/shop/products/136_DENIM_TOP_AMIRIJACQUARDANORAK_PF23MOS004-528_WASHEDINDIGO.jpg?v=1686005461&width=1980",
-            secondImg: "https://amiri.com/cdn/shop/products/136_02_DENIM_TOP_AMIRIJACQUARDANORAK_PF23MOS004-528_WASHEDINDIGO_0567_a8823105-2eeb-403d-bdd1-06c83d1fdb92.jpg?v=1686005461&width=1980",
+            secondImg: "https://amiri.com/cdn/shop/products/136_02_DENIM_TOP_AMIRIJACQUARDANORAK_PF23MOS004-528_WASHEDINDIGO_0567_64a8f01e-6a70-4126-97c3-4941109d149c.jpg?v=1690705275&width=1980",
             bookmarked: false,
             size: ["S", "M", "L", "XL"],
             quantity: 0
         },
         {
             id: 3,
-            name: "PATCHWORK BAGGY SHIRT",
+            name: "PATCHWORK BAGGY T-SHIRT",
             price: 140200,
             coverImg: "https://amiri.com/cdn/shop/products/15_LEATHER_TOP_LEATHERBANDANASHIRT_PF23MLS001-350_MINT.jpg?v=1684374298&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/15_02_LEATHER_TOP_LEATHERBANDANASHIRT_PF23MLS001-350_MINT_0297_4d6d98db-797d-48b3-9468-76134e4d7e7c.jpg?v=1684374298&width=1980",
@@ -63,7 +63,7 @@ export const men = [
         },
         {
             id: 7,
-            name: "PATCHWORK BAGGY SHIRT",
+            name: "PATCHWORK BAGGY T-SHIRT",
             price: 156300,
             coverImg: "https://amiri.com/cdn/shop/products/77_JERSEY_TOP_CRYSTALEMBELLISHEDMAHOODIE_PF23MJG033-001_BLACK_21e39760-d2c7-413d-8cf2-3e621861c043.jpg?v=1684374216&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/77_02_JERSEY_TOP_CRYSTALEMBELLISHEDMAHOODIE_PF23MJG033-001_BLACK_0463.jpg?v=1684374216&width=1980",
@@ -107,7 +107,7 @@ export const women = [
         },
         {
             id: 11,
-            name: "PATCHWORK BAGGY SHIRT",
+            name: "PATCHWORK BAGGY T-SHIRT",
             price: 165200,
             coverImg: "https://amiri.com/cdn/shop/products/53_PF23WOMEN_JERSEY_TOP_AMIRIARTSDISTRICTHOODIE_PF23WJH003-439_TEAL.jpg?v=1684427442&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/53_02_PF23WOMEN_JERSEY_TOP_DISTRICTHOODIE_PF23WJH003-439_TEAL_1542.jpg?v=1684427442&width=1980",
@@ -147,7 +147,7 @@ export const women = [
         },
         {
             id: 15,
-            name: "PATCHWORK BAGGY SHIRT",
+            name: "PATCHWORK BAGGY T-SHIRT",
             price: 127400,
             coverImg: "https://amiri.com/cdn/shop/products/49_PF23WOMEN_JERSEY_TOP_FLORALAMIRICROPPEDCREWNECK_PF23WJC001-100_WHITE.jpg?v=1684427463&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/49_02_PF23WOMEN_JERSEY_TOP_FLORALCREWNECK_PF23WJC001-100_WHITE_1467.jpg?v=1684427463&width=1980",
@@ -190,7 +190,7 @@ export const women = [
         },
         {
             id: 19,
-            name: "PATCHWORK BAGGY SHIRT",
+            name: "PATCHWORK BAGGY T-SHIRT",
             price: 175300,
             coverImg: "https://amiri.com/cdn/shop/products/14_SHIRT_TOP_PF23KSS002-651_SKELTOPSHIRT_PINK.jpg?v=1684537222&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/14_02_SHIRT_TOP_PF23KSS002-651_SKELTOPSHIRT_PINK_1205.jpg?v=1684537222&width=1980",
@@ -230,7 +230,7 @@ export const women = [
         },
         {
             id: 23,
-            name: "PATCHWORK BAGGY SHIRT",
+            name: "PATCHWORK BAGGY T-SHIRT",
             price: 123400,
             coverImg: "https://amiri.com/cdn/shop/products/34_TEE_TOP_PF23KJT008-651_AMIRI22TEE_PINK.jpg?v=1684537263&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/34_02_TEE_TOP_PF23KJT008-651_AMIRI22TEE_PINK_1112.jpg?v=1684537263&width=1980",
@@ -258,7 +258,7 @@ export const women = [
             coverImg: "https://amiri.com/cdn/shop/products/181_SNEAKERS_SHOES_MA-1_PF23MFS010-124_WHITE_RED_2.jpg?v=1684456239&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/181_SNEAKERS_SHOES_MA-1_PF23MFS010-124_WHITE_RED_1.jpg?v=1684456239&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: ["40", "41", "42", "43", "44", "45"],
             quantity: 0
         },
         {
@@ -268,17 +268,17 @@ export const women = [
             coverImg: "https://amiri.com/cdn/shop/products/180_SNEAKERS_SHOES_MA1_PF23MFS010-123_WHITE_BLUE_2.jpg?v=1684456231&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/180_SNEAKERS_SHOES_MA1_PF23MFS010-123_WHITE_BLUE_1.jpg?v=1684456231&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: ["40", "41", "42", "43", "44", "45"],
             quantity: 0
         },
         {
             id: 27,
-            name: "PATCHWORK BAGGY SHIRT",
+            name: "PATCHWORK BAGGY T-SHIRT",
             price: 175300,
             coverImg: "https://amiri.com/cdn/shop/products/92_PF23WOMEN_SNEAKERS_SHOES_COURTHIGH_PF23WFS009-853_BABYBLUE_2_971910e7-4064-4df5-9d87-108a583b33a2.jpg?v=1684456229&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/92_PF23WOMEN_SNEAKERS_SHOES_COURTHIGH_PF23WFS009-853_BABYBLUE_1_23a51678-547e-473c-9438-4bcc705e121d.jpg?v=1684456229&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: ["40", "41", "42", "43", "44", "45"],
             quantity: 0
         },
         {
@@ -288,7 +288,7 @@ export const women = [
             coverImg: "https://amiri.com/cdn/shop/products/27_SS23_WOMENS_SHOES__PXWFS001-111_WHITE_BLACK_2_cbebb665-c0fb-473a-83c1-9149dccc2c23.jpg?v=1683922585&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/27_SS23_WOMENS_SHOES__PXWFS001-111_WHITE_BLACK_1_3a5d8911-0d22-4486-aa2d-13d7cd34a462.jpg?v=1683922585&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: ["40", "41", "42", "43", "44", "45"],
             quantity: 0
         },
         {
@@ -298,7 +298,7 @@ export const women = [
             coverImg: "https://amiri.com/cdn/shop/products/176_SNEAKERS_SHOES_BONERUNNER_PF23MFS001-903_STONEGREY_2.jpg?v=1684456243&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/176_SNEAKERS_SHOES_BONERUNNER_PF23MFS001-903_STONEGREY_1.jpg?v=1684456243&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: ["40", "41", "42", "43", "44", "45"],
             quantity: 0
         },
         {
@@ -308,17 +308,17 @@ export const women = [
             coverImg: "https://amiri.com/cdn/shop/products/185_SNEAKERS_SHOES_STARSCOURTSLIPON_PF23MFS020-124_WHITERED_2.jpg?v=1684456239&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/185_SNEAKERS_SHOES_STARSCOURTSLIPON_PF23MFS020-124_WHITERED_1.jpg?v=1684456239&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: ["40", "41", "42", "43", "44", "45"],
             quantity: 0
         },
         {
             id: 31,
-            name: "PATCHWORK BAGGY SHIRT",
+            name: "PATCHWORK BAGGY T-SHIRT",
             price: 123400,
             coverImg: "https://amiri.com/cdn/shop/products/99_PF23WOMEN_SLIDES_SHOES_POOLSLIDE_PF23WFF002-785_SAGE_2_218743d2-d13e-4f91-89fe-ae74ab2cc8f1.jpg?v=1684456230&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/99_PF23WOMEN_SLIDES_SHOES_POOLSLIDE_PF23WFF002-785_SAGE_1_636901fe-6ca5-4d5c-b08d-c7bdf267973b.jpg?v=1684456230&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: ["40", "41", "42", "43", "44", "45"],
             quantity: 0
         },
         {
@@ -328,7 +328,7 @@ export const women = [
             coverImg: "https://amiri.com/cdn/shop/products/87_PF23WOMEN_SNEAKERS_SHOES_SKELTOPLOW_PF23WFS004-853_BABYBLUE_2_e3fe87fc-464f-4672-b859-0b90b68ee6cb.jpg?v=1684456234&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/87_PF23WOMEN_SNEAKERS_SHOES_SKELTOPLOW_PF23WFS004-853_BABYBLUE_1_3c88cf19-766d-4ee1-b764-9801f66e93d1.jpg?v=1684456234&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: ["40", "41", "42", "43", "44", "45"],
             quantity: 0
         }
     ]
@@ -341,7 +341,7 @@ export const women = [
             coverImg: "https://amiri.com/cdn/shop/products/104_PF23WOMEN_BAGS_ACC_MICROTRIANGLEBAG_PF23WCL003-420_BLUE_2_14288079-818a-4a94-98e6-e62c1b4069ea.jpg?v=1684532418&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/104_PF23WOMEN_BAGS_ACC_MICROTRIANGLEBAG_PF23WCL003-420_BLUE_1_82e61f1c-241d-406b-8304-71089ec8bb57.jpg?v=1684532418&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: [""],
             quantity: 0
         },
         {
@@ -351,17 +351,17 @@ export const women = [
             coverImg: "https://amiri.com/cdn/shop/products/86_BAGS_ACC_NAPPA_PS23WCL005-271_ALABASTER_1_05cd9449-acff-403e-80fa-95789309238c.jpg?v=1686001826&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/86_BAGS_ACC_NAPPA_PS23WCL005-271_ALABASTER_2_e2605cd6-7377-4e45-a053-4d4487d19a6c.jpg?v=1686001826&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: [""],
             quantity: 0
         },
         {
             id: 35,
-            name: "PATCHWORK BAGGY SHIRT",
+            name: "PATCHWORK BAGGY T-SHIRT",
             price: 175300,
             coverImg: "https://amiri.com/cdn/shop/products/196_BAGS_ACC_EDENROCKTOTEBAG_PF23MBT008-900_MULTI_2_8ec52cf5-a861-4368-9512-a0da00d7eb1d.jpg?v=1684800623&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/196_BAGS_ACC_EDENROCKTOTEBAG_PF23MBT008-900_MULTI_1_74d32bc5-4395-41e4-82f7-e73f26f325f0.jpg?v=1684800623&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: [""],
             quantity: 0
         },
         {
@@ -371,7 +371,7 @@ export const women = [
             coverImg: "https://amiri.com/cdn/shop/products/201_BAGS_ACC_CANVAS_LEATHERSTARSWEEKENDER_PF23MAW003-001_BLACK_2.jpg?v=1684374660&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/201_BAGS_ACC_CANVAS_LEATHERSTARSWEEKENDER_PF23MAW003-001_BLACK_1.jpg?v=1684374660&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: [""],
             quantity: 0
         },
         {
@@ -381,7 +381,7 @@ export const women = [
             coverImg: "https://amiri.com/cdn/shop/products/125_PFW22_Womens_ACC_BAGS_PF22WCL005-001_BLACK_2.jpg?v=1683921323&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/125_PFW22_Womens_ACC_BAGS_PF22WCL005-001_BLACK_1.jpg?v=1683921323&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: [""],
             quantity: 0
         },
         {
@@ -391,17 +391,17 @@ export const women = [
             coverImg: "https://amiri.com/cdn/shop/products/126_PFW22_Womens_ACC_BAGS_PF22WCL005-271_ALABASTER_2_b982203e-6d0f-4fdf-a757-4ad73d555592.jpg?v=1683917530&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/126_PFW22_Womens_ACC_BAGS_PF22WCL005-271_ALABASTER_1_034f97bd-50c5-446f-a25d-a2eabe9e0de4.jpg?v=1683917530&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: [""],
             quantity: 0
         },
         {
             id: 39,
-            name: "PATCHWORK BAGGY SHIRT",
+            name: "PATCHWORK BAGGY T-SHIRT",
             price: 123400,
             coverImg: "https://amiri.com/cdn/shop/products/12_PS22MAJ004-001_NAPPA_JAX_MINI_BLACK_PS22_3289_1.jpg?v=1683920716&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/12_PS22MAJ004-001_NAPPA_JAX_MINI_BLACK_PS22_3289_2.jpg?v=1683920716&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: [""],
             quantity: 0
         },
         {
@@ -411,7 +411,7 @@ export const women = [
             coverImg: "https://amiri.com/cdn/shop/products/122_PFW22_Womens_ACC_BAGS_PF22WCL002-271_ALABASTER_1_c3186d45-9b19-40f6-8c1c-c35c1006cc1a.jpg?v=1683921200&width=1980",
             secondImg: "https://amiri.com/cdn/shop/products/122_PFW22_Womens_ACC_BAGS_PF22WCL002-271_ALABASTER_2_15a4cef8-7e12-4194-a1e8-a02084d51ac7.jpg?v=1683921200&width=1980",
             bookmarked: false,
-            size: ["S", "M", "L", "XL"],
+            size: [""],
             quantity: 0
         }
     ]

@@ -37,9 +37,9 @@ export default function BeltItem(props) {
           <div className='beltItem-price'>
               <p>{price.toLocaleString(undefined, {minimumFractionDigits:2})} RSD</p>
           </div>
-          <button className='beltItem-button' onClick={() => addToCart(id)}>
+          {/* <button className='beltItem-button' onClick={() => addToCart(id)}>
               Add To Cart
-          </button>
+          </button> */}
         </div> 
     </div>
   );

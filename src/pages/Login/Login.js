@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import Navbar from '../components/navbar/Navbar'
-import Footer from '../components/Footer'
-import Heading from '../components/Heading'
+import Navbar from '../../components/navbar/Navbar'
+import Heading from '../../components/Heading'
 
+import './login.css'
 export default function Login() {
   const [ email, setEmail ] = useState("")
   const [ password, setPassword ] = useState("")
   const [ showAlert, setShowAlert ] = useState(false)
+
 
   const handleSignIn = () => {
     setShowAlert(true)
@@ -50,7 +51,6 @@ export default function Login() {
                 </p>
               </div>
             )}
-          <Footer />
         </div>
       );
 }

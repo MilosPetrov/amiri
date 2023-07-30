@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Home from './pages/Home';
+import Home from './pages/Homepage/Home';
 import Mens from './pages/Mens';
 import Womens from './pages/Womens';
 import Kids from './pages/Kids';
@@ -11,7 +11,8 @@ import Wishlist from './pages/Wishlist/Wishlist';
 import Navbar from './components/navbar/Navbar';
 import ShopContextProvider from './context/shop-context';
 import Drawer from './components/drawer/Drawer'
-import Login from './pages/Login';
+import Login from './pages/Login/Login';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/Wishlist" element={<Wishlist />} />
             <Route path="/Login" element={<Login />} />
           </Routes>
+          <Footer />
           <Drawer />
         </Router>
       </ShopContextProvider>

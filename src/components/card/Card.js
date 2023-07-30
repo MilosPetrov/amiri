@@ -10,30 +10,34 @@ export default function Card(props) {
   const [ alert, setAlert ] = useState(false)
   const [ hovered, setHovered ] = useState(false)
   
-  const { product } = props;
-  if (!product) {
+  if (!props.product) {
     return null; // Return early if data is undefined
   }
 
-  const { id, name, price, coverImg, secondImg, size } = product;
+  const { id, name, price, coverImg, secondImg, size } = props.product;
 
   const handleCardClick = () => {
     toggleBookmark(id)
   };
 
   const sizeElement = size.map((option) => (
-    <option className='option' key={option} value={option}>{option}</option>
-  ))
+    <option className='option' key={option} value={option}>
+      {option}
+    </option>
+  ));
 
   const handleOptionChange = (event) => {
     setSelectedSize(event.target.value)
   }
 
   const handleAddToCard = () => {
-    if (selectedSize === "Select size") {
+    if (props.category === "Accessories") {
+      addToCart(id, null)
+    } else if (selectedSize === "Select size") {
       setAlert(true)
     } else {
       addToCart(id, selectedSize) 
+      setSelectedSize("Select size")
     }
   }
 
@@ -44,6 +48,7 @@ export default function Card(props) {
   const handleMouseLeave = () => {
     setHovered(false)
   }
+  
 
   return (
     <div 
@@ -67,13 +72,13 @@ export default function Card(props) {
           <p>{name}</p>
           <p>{price.toLocaleString(undefined, {minimumFractionDigits:2})} RSD</p>
         </div>
-        {size && (
+        {size && props.category !== 'Accessories' && (
           <div className='card--info--size'>
             <label htmlFor={`size-${id}`}></label>
-            <select value={selectedSize} onChange={handleOptionChange}>
-              <option disabled>Select size</option>
-              {sizeElement}
-            </select>
+            <select value={selectedSize} onChange={handleOptionChange} defaultValue="Select size">
+            <option disabled>Select size</option>
+            {sizeElement}
+          </select>
           </div>
         )}
         <button 
@@ -83,7 +88,7 @@ export default function Card(props) {
           Add To Cart
         </button>
       </div>
-      {alert && <SizeAlert closeAlert={() => setAlert(false)} />}
+      {alert && props.category !== 'Accessories' && <SizeAlert closeAlert={() => setAlert(false)} />}
     </div>
   );
 }

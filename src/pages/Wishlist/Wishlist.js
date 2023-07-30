@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { products } from '../../data'
-import Footer from '../../components/Footer'
 import { ShopContext } from '../../context/shop-context'
 import Heading from '../../components/Heading'
 import { Bookmarked } from './Bookmarked'
@@ -25,7 +24,6 @@ export default function Wishlist() {
           {bookmarkedElement}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

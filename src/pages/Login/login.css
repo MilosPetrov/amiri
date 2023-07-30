@@ -1,0 +1,75 @@
+.login-heading {
+    font-size: 44px !important;
+    line-height: 48px;
+    letter-spacing: 0.2rem !important;
+  
+  }
+  
+  .account {
+    display: block;
+    box-sizing: border-box;
+    margin: 48px auto 0;
+    text-align: center;
+  }
+  
+  .account-email {
+    max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid;
+    margin-bottom: 1.5rem;
+    
+  }
+  
+  .account-email input {
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .account-email input:focus {
+    border-radius: 0px;
+    outline: 1px;
+  }
+  
+  .account-password {
+    max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid;
+    margin-bottom: 1.5rem;
+    
+  }
+  
+  .account-password input {
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .account-password input:focus {
+    border-radius: 0px;
+    outline: 1px;
+  }
+  
+  .account-button button {
+      text-decoration: none;
+      background-color: rgb(19, 19, 19);
+      color: white;
+      cursor: pointer;
+      border: none;
+      padding: 4px;
+      margin: 40px auto 0;
+      font-size: 12px;
+      line-height: 15px;
+      padding: 8px 16px;
+      transition: all .2s ease-in-out;
+    }
+  
+  .account-button button:hover {
+    background-color: #191c1ccc;
+    border: none;
+  }
+  

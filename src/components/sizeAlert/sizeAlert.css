@@ -1,3 +1,10 @@
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+} 
+
 .size-alert {
     position: fixed;
     top: 50%;

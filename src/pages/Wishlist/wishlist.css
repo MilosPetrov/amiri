@@ -62,7 +62,7 @@
   .wishlist-item-removeBtn {
     position: absolute;
     top: 3px;
-    right: 1px;
+    right: 0px;
   }
 
   .wishlist-item-removeBtn:hover {
@@ -83,4 +83,26 @@
     background-color: rgb(19, 19, 19);
     color: white;
     cursor: pointer;
+  }
+
+  .wishlist-size select {
+    justify-content: flex-end;
+    background-color: transparent;
+    border: 1px solid rgb(19, 19, 19);
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 2px;
+  }
+
+  .wishlist-size select:focus,
+    select:hover {
+    outline: none;
+    border: 1px solid rgb(19, 19, 19);
+    background-color: rgb(19, 19, 19);
+    color: white;
+  }
+
+  .option {
+    background-color: rgb(19, 19, 19);
+    color: rgb(255, 255, 255);
   }
