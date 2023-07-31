@@ -4,44 +4,42 @@ import { X } from "phosphor-react";
 import SizeAlert from "../../components/sizeAlert/SizeAlert";
 
 export const Bookmarked = (props) => {
-  const { addToCart, toggleBookmark } = useContext(ShopContext);
-  const [selectedSize, setSelectedSize] = useState("Select size");
-  const [alert, setAlert] = useState(false);
+  const { addToCart, toggleBookmark } = useContext(ShopContext)
+  const [selectedSize, setSelectedSize] = useState("Select size")
+  const [alert, setAlert] = useState(false)
 
-  const { product } = props;
+  const { product } = props
   if (!product) {
-    return null;
+    return null
   }
 
-  const { id, name, price, coverImg, size } = product;
+  const { id, name, price, coverImg, size } = product
 
   const handleRemoveBookmark = () => {
-    toggleBookmark(id);
-  };
+    toggleBookmark(id)
+  }
 
   const sizeElement = size.map((option) => (
     <option className="option" key={option} value={option}>
       {option}
     </option>
-  ));
+  ))
 
   const handleOptionChange = (event) => {
-    setSelectedSize(event.target.value);
-  };
+    setSelectedSize(event.target.value)
+  }
 
   const handleAddToCard = () => {
     if (props.category === "Accessories") {
-      addToCart(id, null);
+      addToCart(id, null)
     } else if (selectedSize === "Select size") {
-      setAlert(true);
+      setAlert(true)
     } else {
-      addToCart(id, selectedSize);
+      addToCart(id, selectedSize)
       setSelectedSize("Select size")
     }
-  };
+  }
 
-  console.log("Category:", props.category);
-  console.log("Size:", size);
 
   return (
     <div className="wishlist-item">
@@ -74,5 +72,5 @@ export const Bookmarked = (props) => {
       </div>
       {alert && props.category !== "Accessories" && <SizeAlert closeAlert={() => setAlert(false)} />}
     </div>
-  );
-};
+  )
+}

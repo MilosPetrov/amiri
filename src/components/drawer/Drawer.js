@@ -10,32 +10,32 @@ import DrawerFooter from './Drawer-footer';
 import { useNavigate } from 'react-router-dom';
 
 
-const Drawer = ({ isOpen, isClosed }) => {
-  const drawerClassName = `drawer ${isOpen ? 'open' : ''}`;
+export default function Drawer ({ isOpen, isClosed }) {
+  const drawerClassName = `drawer ${isOpen ? 'open' : ''}`
 
-  const { cartItems, getTotalCartAmount } = useContext(ShopContext);
+  const { cartItems, getTotalCartAmount } = useContext(ShopContext)
   const navigate = useNavigate()
 
   const handleContinueShopping = () => {
-    isClosed();
-    navigate('/');
-  };
+    isClosed()
+    navigate('/')
+  }
 
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflowY = 'hidden';
+      document.body.style.overflowY = 'hidden'
     } else {
-      document.body.style.overflowY = 'auto';
+      document.body.style.overflowY = 'auto'
     }
-  }, [isOpen]);
+  }, [isOpen])
 
   const cartElements = Object.keys(cartItems).map((key) => {
-    const [itemId, pickedSize] = key.split('-');
-    const product = products.find((p) => p.id === Number(itemId));
-    const quantity = cartItems[key].quantity;
-    return quantity > 0 ? <CartItem key={key} product={product} selectedSize={pickedSize} /> : null;
-  });
+    const [itemId, pickedSize] = key.split('-')
+    const product = products.find((p) => p.id === Number(itemId))
+    const quantity = cartItems[key].quantity
+    return quantity > 0 ? <CartItem key={key} product={product} selectedSize={pickedSize} /> : null
+  })
 
   const totalAmount = getTotalCartAmount()
 
@@ -61,7 +61,5 @@ const Drawer = ({ isOpen, isClosed }) => {
       </div>
       {isOpen && <div className="drawer-overlay" onClick={isClosed} />}
     </div>
-  );
-};
-
-export default Drawer;
+  )
+}

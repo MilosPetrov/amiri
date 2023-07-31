@@ -7,29 +7,28 @@ import Drawer from "../drawer/Drawer";
 import './navbar.css'
 
 export default function Navbar() {
-    const { bookmarkedCards, cartItems } = useContext(ShopContext);
+    const { bookmarkedCards, cartItems } = useContext(ShopContext)
     const [ drawer, setDrawer ] = useState(false)
     let navigate = useNavigate()
 
     const handleNavigation = (path) => {
-        navigate(path);
-        scrollToTop();
-      };
+        navigate(path)
+        scrollToTop()
+      }
     
       const scrollToTop = () => {
-        window.scrollTo(0, 0);
-      };
+        window.scrollTo(0, 0)
+      }
 
     const hasBookmarkedProducts = Object.values(bookmarkedCards).some(
         (bookmarked) => bookmarked
-      );
+      )
 
     const totalCartItems = Object.values(cartItems).reduce(
         (total, item) => total + (item.quantity || 0),
         0
-      );
+      )
 
-      console.log(totalCartItems)
 
     const toggleDrawer = () => {
         setDrawer(!drawer)

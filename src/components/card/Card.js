@@ -5,26 +5,26 @@ import { BookmarkSimple } from 'phosphor-react';
 
 import './card.css';
 export default function Card(props) {
-  const { addToCart, toggleBookmark, bookmarkedCards } = useContext(ShopContext);
+  const { addToCart, toggleBookmark, bookmarkedCards } = useContext(ShopContext)
   const [ selectedSize, setSelectedSize ] = useState("Select size")
   const [ alert, setAlert ] = useState(false)
   const [ hovered, setHovered ] = useState(false)
   
   if (!props.product) {
-    return null; // Return early if data is undefined
+    return null // Return early if data is undefined
   }
 
-  const { id, name, price, coverImg, secondImg, size } = props.product;
+  const { id, name, price, coverImg, secondImg, size } = props.product
 
   const handleCardClick = () => {
     toggleBookmark(id)
-  };
+  }
 
   const sizeElement = size.map((option) => (
     <option className='option' key={option} value={option}>
       {option}
     </option>
-  ));
+  ))
 
   const handleOptionChange = (event) => {
     setSelectedSize(event.target.value)
@@ -75,7 +75,10 @@ export default function Card(props) {
         {size && props.category !== 'Accessories' && (
           <div className='card--info--size'>
             <label htmlFor={`size-${id}`}></label>
-            <select value={selectedSize} onChange={handleOptionChange} defaultValue="Select size">
+            <select 
+              value={selectedSize} 
+              onChange={handleOptionChange} 
+            >
             <option disabled>Select size</option>
             {sizeElement}
           </select>
@@ -90,5 +93,5 @@ export default function Card(props) {
       </div>
       {alert && props.category !== 'Accessories' && <SizeAlert closeAlert={() => setAlert(false)} />}
     </div>
-  );
+  )
 }

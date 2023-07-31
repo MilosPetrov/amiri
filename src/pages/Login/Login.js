@@ -16,7 +16,7 @@ export default function Login() {
     setPassword('')
 
     setTimeout(() => {
-      setShowAlert(false);
+      setShowAlert(false)
     }, 3000)
   }
 
@@ -52,5 +52,5 @@ export default function Login() {
               </div>
             )}
         </div>
-      );
+      )
 }

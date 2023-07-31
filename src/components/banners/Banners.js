@@ -6,13 +6,13 @@ export default function Banners() {
     const navigate = useNavigate()
 
     const handleNavigation = (path) => {
-      navigate(path);
-      scrollToTop();
-    };
+      navigate(path)
+      scrollToTop()
+    }
   
     const scrollToTop = () => {
-      window.scrollTo(0, 0);
-    };
+      window.scrollTo(0, 0)
+    }
   return (
     <div>
         <div className='main-big-imgs'>

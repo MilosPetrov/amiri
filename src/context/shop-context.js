@@ -1,84 +1,84 @@
 import React, { createContext, useState } from 'react';
 import { products } from '../data';
 
-export const ShopContext = createContext(null);
+export const ShopContext = createContext(null)
 
 const getDefaultCart = () => {
-  let cart = {};
+  let cart = {}
   for (let i = 1; i <= products.length; i++) {
-    cart[i] = 0;
+    cart[i] = 0
   }
-  return cart;
-};
+  return cart
+}
 
 const getDefaultBookmarked = () => {
-  let bookmarked = {};
+  let bookmarked = {}
   products.forEach((product) => {
     bookmarked[product.id] = product.bookmarked || false;
-  });
-  return bookmarked;
-};
+  })
+  return bookmarked
+}
 
 export default function ShopContextProvider(props) {
-  const [cartItems, setCartItems] = useState(getDefaultCart());
-  const [bookmarkedCards, setBookmarkedCards] = useState(getDefaultBookmarked());
+  const [cartItems, setCartItems] = useState(getDefaultCart())
+  const [bookmarkedCards, setBookmarkedCards] = useState(getDefaultBookmarked())
 
   const getCompositeKey = (itemId, pickedSize) => {
-    return `${itemId}-${pickedSize}`;
-  };
+    return `${itemId}-${pickedSize}`
+  }
 
   
   // CART  
 
   const getTotalCartAmount = () => {
-    let totalAmount = 0;
+    let totalAmount = 0
     for (const key in cartItems) {
-      const [itemId, pickedSize] = key.split('-');
-      const product = products.find((p) => p.id === Number(itemId));
+      const [itemId, pickedSize] = key.split('-')
+      const product = products.find((p) => p.id === Number(itemId))
       if (cartItems[key].quantity > 0 && product) {
-        totalAmount += cartItems[key].quantity * product.price;
+        totalAmount += cartItems[key].quantity * product.price
       }
     }
-    return totalAmount;
-  };
+    return totalAmount
+  }
 
 
   const addToCart = (itemId, pickedSize) => {
-    const key = getCompositeKey(itemId, pickedSize);
+    const key = getCompositeKey(itemId, pickedSize)
     setCartItems((prevCartItems) => ({
       ...prevCartItems,
       [key]: { ...prevCartItems[key], quantity: (prevCartItems[key]?.quantity || 0) + 1, pickedSize },
-    }));
+    }))
   
-  };
-  console.log("Updated cart:", cartItems);
+  }
+  console.log("Updated cart:", cartItems)
 
 
   const removeFromCart = (itemId, pickedSize) => {
-    const key = getCompositeKey(itemId, pickedSize);
+    const key = getCompositeKey(itemId, pickedSize)
     setCartItems((prevCartItems) => {
-      const updatedCartItems = { ...prevCartItems };
+      const updatedCartItems = { ...prevCartItems }
       if (updatedCartItems[key] && updatedCartItems[key].quantity > 0) {
-        updatedCartItems[key].quantity -= 1;
+        updatedCartItems[key].quantity -= 1
         if (updatedCartItems[key].quantity === 0) {
-          delete updatedCartItems[key];
+          delete updatedCartItems[key]
         }
       }
-      return updatedCartItems;
-    });
-  };
+      return updatedCartItems
+    })
+  }
 
   const updateCartItemCount = (newQuantity, itemId, pickedSize) => {
-    const key = getCompositeKey(itemId, pickedSize);
+    const key = getCompositeKey(itemId, pickedSize)
     setCartItems((prevCartItems) => ({
       ...prevCartItems,
       [key]: { ...prevCartItems[key], quantity: newQuantity  },
-    }));
-  };
+    }))
+  }
 
   const checkout = () => {
-    setCartItems(getDefaultCart());
-  };
+    setCartItems(getDefaultCart())
+  }
 
   // BOOKMARK
 
@@ -86,8 +86,8 @@ export default function ShopContextProvider(props) {
     setBookmarkedCards((prevBookmarkedCards) => ({
       ...prevBookmarkedCards,
       [itemId]: !prevBookmarkedCards[itemId],
-    }));
-  };
+    }))
+  }
 
 
 
@@ -101,11 +101,11 @@ export default function ShopContextProvider(props) {
     checkout,
     toggleBookmark,
     getCompositeKey
-  };
+  }
 
   return (
     <ShopContext.Provider value={contextValue}>
       {props.children}
     </ShopContext.Provider>
-  );
+  )
 }

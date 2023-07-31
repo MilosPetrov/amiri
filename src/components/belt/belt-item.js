@@ -4,20 +4,20 @@ import './belt.css'
 import { BookmarkSimple } from 'phosphor-react';
 
 export default function BeltItem(props) {
-  const { addToCart, toggleBookmark, bookmarkedCards } = useContext(ShopContext);
+  const { addToCart, toggleBookmark, bookmarkedCards } = useContext(ShopContext)
 
-  const { product } = props;
+  const { product } = props
   if (!product) {
-    return null; // Return early if data is undefined
+    return null // Return early if data is undefined
   }
 
-  const { id, name, price, coverImg } = product;
+  const { id, name, price, coverImg } = product
 
-  // const cartItemCount = cartItems[id] || 0;
+  // const cartItemCount = cartItems[id] || 0
   
   const handleCardClick = () => {
     toggleBookmark(id)
-  };
+  }
 
   
   return (
@@ -42,5 +42,5 @@ export default function BeltItem(props) {
           </button> */}
         </div> 
     </div>
-  );
+  )
 }

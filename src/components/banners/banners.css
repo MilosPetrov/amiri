@@ -1,11 +1,12 @@
 .main-big-imgs {
     display: flex;
-    padding: 24px 0px;
+    padding: 26px 0px;
     flex-wrap: nowrap;
     height: 811px;
     margin: 0px 231.5;
     justify-content: center;
     gap: 20px;
+    margin-top: 70px;
   }
   
   .main-big-imgs img {

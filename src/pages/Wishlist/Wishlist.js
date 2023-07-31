@@ -25,5 +25,5 @@ export default function Wishlist() {
         </div>
       </div>
     </div>
-  );
+  )
 }

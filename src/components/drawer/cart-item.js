@@ -2,21 +2,20 @@ import React, { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
 
 export const CartItem = ({ product = {}, selectedSize }) => {
-  const { id, name, price, coverImg, size } = product;
+  const { id, name, price, coverImg, size } = product
   const { cartItems, addToCart, removeFromCart, updateCartItemCount, getCompositeKey } =
-    useContext(ShopContext);
+    useContext(ShopContext)
 
-    const item = cartItems[getCompositeKey(id, selectedSize)];
-    const quantity = item ? item.quantity : 0;
-    const itemSize = selectedSize !== "Select size" ? selectedSize : null;
+    const item = cartItems[getCompositeKey(id, selectedSize)]
+    const quantity = item ? item.quantity : 0
+    const itemSize = selectedSize !== "Select size" ? selectedSize : null
     
 
   const handleInputChange = (event) => {
-    const newQuantity = Number(event.target.value);
-    updateCartItemCount(newQuantity, id, selectedSize);
-  };
+    const newQuantity = Number(event.target.value)
+    updateCartItemCount(newQuantity, id, selectedSize)
+  }
 
-  console.log("CartItem rendered with quantity:", quantity);
 
   return (
     <div className="cartItem">
