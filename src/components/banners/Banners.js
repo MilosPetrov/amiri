@@ -1,5 +1,6 @@
 import React from 'react'
 import './banners.css'
+import images from '../../images/images'
 import { useNavigate } from 'react-router-dom'
 
 export default function Banners() {
@@ -18,11 +19,11 @@ export default function Banners() {
         <div className='main-big-imgs'>
         <img 
         onClick={() => handleNavigation("/Mens")}
-        src='https://cdn.shopify.com/s/files/1/1056/1394/files/oiTy6Rcs.jpg?v=1677976900&width=1280'
+        src={images['./card1.webp']}
         />
         <img 
         onClick={() => handleNavigation("/Footwear")}
-        src='https://cdn.shopify.com/s/files/1/1056/1394/files/JfOyiPs4.jpg?v=1677976933&width=1280'
+        src={images['./card2.webp']}
         />
       </div>
       <div className='categorie'>
@@ -30,9 +31,9 @@ export default function Banners() {
         <h5 onClick={() => handleNavigation("/Footwear")}>FOOTWEAR</h5>
       </div>
       <div className='main-small-imgs'>
-        <img onClick={() => handleNavigation("/Womens")} src='https://cdn.shopify.com/s/files/1/1056/1394/files/4SuQELLw.jpg?v=1677976987&width=1280' />
-        <img onClick={() => handleNavigation("/Kids")} src='https://cdn.shopify.com/s/files/1/1056/1394/files/SS23_Bucket_Kids_3.jpg?v=1677977027&width=1280' />
-        <img onClick={() => handleNavigation("/Accessories")} src='https://cdn.shopify.com/s/files/1/1056/1394/files/SS23_Bucket_Accessories_9.jpg?v=1677977077&width=1280' />
+        <img onClick={() => handleNavigation("/Womens")} src={images['./card3.webp']} />
+        <img onClick={() => handleNavigation("/Kids")} src={images['./card4.webp']} />
+        <img onClick={() => handleNavigation("/Accessories")} src={images['./card5.webp']} />
       </div>
       <div className='categorie-second'>
         <h5 onClick={() => handleNavigation("/Womens")}>WOMENSWEAR</h5>

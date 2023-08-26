@@ -1,6 +1,7 @@
 import React from 'react'
 import Belt from '../../components/belt/Belt'
 import Banners from '../../components/banners/Banners'
+import images from '../../images/images'
 import { women, accessories, men, footwear } from '../../data'
 
 
@@ -19,11 +20,11 @@ export default function Homepage() {
       <Banners />
       <Belt array={forHimArray} heading={"FOR HIM"}/>
       <div className='womens-new'>
-        <img className='womens-new-img' src='https://cdn.shopify.com/s/files/1/1056/1394/files/HP_Slideshow_Banner_SS23-Womens.jpg?v=1677977157&width=992' />
+        <img className='womens-new-img' src={images['./wideImage1.webp']} />
         <p>INSPIRED BY CALIFORNIAN CLEAR SKY DREAMING, THE ACCOMPANYING CAMPAIGN DISTILLS THIS TIMELESS NARRATIVE FOR A NEW GENERATION.</p>
       </div>
       <div className='womens-new'>
-        <img src='https://cdn.shopify.com/s/files/1/1056/1394/files/cRnkiBnQ.jpg?v=1677977285&width=992' />
+        <img src={images['./wideImage2.webp']} />
       </div>
       <Belt array={forHerArray} heading={"FOR HER"}/>
     </div>
