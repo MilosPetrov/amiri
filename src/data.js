@@ -1,4 +1,4 @@
-import images from "./images/images"
+import images from './images/images'
 
 export const men = [
         {
