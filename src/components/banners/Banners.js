@@ -15,8 +15,8 @@ export default function Banners() {
       window.scrollTo(0, 0)
     }
   return (
-    <div>
-        <div className='main-big-imgs'>
+    <div className='main-banners'>
+      <div className='main-big-imgs'>
         <img 
         onClick={() => handleNavigation("/Mens")}
         src={images['./card1.webp']}
