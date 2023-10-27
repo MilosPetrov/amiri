@@ -32,7 +32,7 @@ export default function Card(props) {
 
   const handleAddToCard = () => {
     if (props.category === "Accessories") {
-      addToCart(id, null)
+      addToCart(id, " ")
     } else if (selectedSize === "Select size") {
       setAlert(true)
     } else {
